@@ -1,10 +1,19 @@
 .l-container {
-  display: flex;
   height: 100%;
+  display: flex;
+  ;
 }
 
 .normal-padding {
   padding: 1.2rem;
+}
+
+.l-container .n {
+  flex: 1.5;
+}
+
+.l-container .c {
+  flex: 12;
 }
 
 .shadow {
