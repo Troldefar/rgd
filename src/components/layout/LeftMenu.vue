@@ -45,40 +45,11 @@
 
 <script>
 import { ref } from 'vue';
+import { menuItemsInterface, menuItemsAddons } from '../../assets/js/arrays/array';
 export default {
   name: 'LeftMenu',
   setup() {
     const currentElement = ref('');
-    const menuItemsInterface = [
-      {
-        title: 'components',
-        header: 'Components',
-        icon: 'fas fa-cog'
-      },
-      {
-        title: 'utilities',
-        header: 'Utilities',
-        icon: 'fas fa-tools'
-      }
-    ];
-
-    const menuItemsAddons = [
-      {
-        title: 'pages',
-        header: 'Pages',
-        icon: 'fas fa-folder-open'
-      },
-      {
-        title: 'charts',
-        header: 'Charts',
-        icon: 'fas fa-chart-area'
-      },
-      {
-        title: 'tables',
-        header: 'Tables',
-        icon: 'fas fa-table'
-      }
-    ];
 
     function openSlide(el) {
       if(this.currentElement === el) {
