@@ -29,7 +29,9 @@
         Test user
       </span>
       <span>
-        <img class="userImage" src="https://img.icons8.com/dusk/64/000000/user-shield.png"/>
+        <img 
+          class="userImage" 
+          src="https://www.flaticon.com/svg/vstatic/svg/3135/3135715.svg?token=exp=1616351162~hmac=418a852f4c1bae0b301d00ab84c659f1"/>
       </span>
     </div>
   </div>
