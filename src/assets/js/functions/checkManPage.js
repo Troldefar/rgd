@@ -1,10 +1,19 @@
+import { man } from '../objects/man';
+
 export function checkManPage (search, callback) {
-  console.log(search);
-  const ro = {};
-  if(search.value === 'man') {
-    ro.test = '123';
-  } else if(search.value === 'clear') {
-    ro.clear = '12d12d1';
+  const rules = {
+    text: '',
+    data: []
+  };
+  if(search === 'man') {
+    rules.text = 'intro';
+    rules.data = [man]
+    return callback(rules);
+  } else if(search === 'clear') {
+    rules.text = 'clear';
+    return callback(rules);
+  } else {
+    rules.text = 'Not valid';
+    return callback(rules);
   }
-  return callback('123');
 }

@@ -24,8 +24,7 @@
 </template>
 
 <script>
-import { ref, onMounted, onUpdated } from 'vue';
-import { man } from '../assets/js/objects/man';
+import { ref, onMounted } from 'vue';
 import { checkManPage } from '../assets/js/functions/checkManPage';
 export default {
   setup() {
@@ -44,22 +43,17 @@ export default {
       search = this.previousCommands[this.previousCommands.length - 1]
     }
     function getResult(msg) {
-      console.log(msg);
+      currentManPage.value.text = msg.text
     }
     
     onMounted(() => {
       focus();
     });
 
-    onUpdated(() => {
-      console.log(search.value);
-    })
-
     return {
       search,
       previousCommands,
       showPrevious,
-      man,
       currentManPage,
       checkManPage,
       getResult
