@@ -40,10 +40,10 @@ export default {
       document.querySelector(".input").focus();
     }
     function showPrevious() {
-      search = this.previousCommands[this.previousCommands.length - 1]
+      search = this.previousCommands[this.previousCommands.length - 1];
     }
     function getResult(msg) {
-      currentManPage.value.text = msg.text
+      currentManPage.value.text = msg.text;
     }
     
     onMounted(() => {
