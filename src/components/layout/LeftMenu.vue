@@ -4,78 +4,42 @@
       Dashboard
     </h2>
     <hr>
-    <router-link class="menuItem" to="/">
+    <div class="menuItem">
       <i class="fas fa-fw fa-tachometer-alt mr-2"></i>
       Dashboard
-    </router-link>
+    </div>
     <hr>
     <p>
       Interface
     </p>
-    <router-link class="menuItem" to="/">
-      <p @click="openSlide('components')">
-        <i class="fas fa-cog"></i>
+    <div class="menuItem" v-for="item in menuItemsInterface" :key="item.title">
+      <p @click="openSlide(item.title)">
+        <i :class="item.icon"></i>
         <span class="text-align-start">
-          Components
+          {{ item.header }}
         </span>
         <i class="fas fa-angle-right leftArrow fac"></i>
       </p>
-      <div :class=" `menuComponent ${currentElement === 'components' ? 'active grow' : 'notActive'}`">
-        Components stuff
+      <div :class=" `menuComponent ${currentElement === item.title ? 'active grow' : 'notActive'}`">
+        {{ item.title }}
       </div>
-    </router-link>
-    <router-link class="menuItem" to="/statistics">
-      <p @click="openSlide('utilities')">
-        <i class="fas fa-tools"></i>
-        <span class="text-align-start">
-          Utilities
-        </span>
-        <i class="fas fa-angle-right leftArrow fac"></i>
-      </p>
-      <div :class=" `menuComponent ${currentElement === 'utilities' ? 'active' : 'notActive'}`">
-        Utilities
-      </div>
-    </router-link>
+    </div>
     <hr>
     <p>
       Addons
     </p>
-    <router-link class="menuItem" to="/">
-      <p  @click="openSlide('pages')">      
-        <i class="fas fa-folder-open"></i>
+    <div class="menuItem" v-for="item in menuItemsAddons" :key="item.title">
+      <p @click="openSlide(item.title)">
+        <i :class="item.icon"></i>
         <span class="text-align-start">
-          Pages
+          {{ item.header }}
         </span>
         <i class="fas fa-angle-right leftArrow fac"></i>
       </p>
-      <div :class=" `menuComponent ${currentElement === 'pages' ? 'active' : 'notActive'}`">
-        Components stuff
+      <div :class=" `menuComponent ${currentElement === item.title ? 'active grow' : 'notActive'}`">
+        {{ item.title }}
       </div>
-    </router-link>
-    <router-link class="menuItem" to="/statistics">
-      <p @click="openSlide('charts')">
-        <i class="fas fa-chart-area"></i>
-        <span class="text-align-start">
-          Charts
-        </span>
-        <i class="fas fa-angle-right leftArrow fac"></i>
-      </p>
-      <div :class=" `menuComponent ${currentElement === 'charts' ? 'active' : 'notActive'}`">
-        Charts stuff
-      </div>
-    </router-link>
-    <router-link class="menuItem" to="/statistics">
-      <p @click="openSlide('tables')">      
-        <i class="fas fa-table"></i>
-        <span class="text-align-start">
-          Tables
-        </span>
-        <i class="fas fa-angle-right leftArrow fac"></i>
-      </p>
-      <div :class=" `menuComponent ${currentElement === 'tables' ? 'active' : 'notActive'}`">
-        Tables
-      </div>
-    </router-link>
+    </div>
   </div>
 </template>
 
@@ -85,6 +49,36 @@ export default {
   name: 'LeftMenu',
   setup() {
     const currentElement = ref('');
+    const menuItemsInterface = [
+      {
+        title: 'components',
+        header: 'Components',
+        icon: 'fas fa-cog'
+      },
+      {
+        title: 'utilities',
+        header: 'Utilities',
+        icon: 'fas fa-tools'
+      }
+    ];
+
+    const menuItemsAddons = [
+      {
+        title: 'pages',
+        header: 'Pages',
+        icon: 'fas fa-folder-open'
+      },
+      {
+        title: 'charts',
+        header: 'Charts',
+        icon: 'fas fa-chart-area'
+      },
+      {
+        title: 'tables',
+        header: 'Tables',
+        icon: 'fas fa-table'
+      }
+    ];
 
     function openSlide(el) {
       if(this.currentElement === el) {
@@ -96,7 +90,9 @@ export default {
 
     return {
       currentElement,
-      openSlide
+      openSlide,
+      menuItemsInterface,
+      menuItemsAddons
     }
   }
 }
@@ -106,6 +102,7 @@ export default {
 .n {
   display: flex;
   flex-direction: column;
+  color: white;
 }
 
 .n .menuItem {
