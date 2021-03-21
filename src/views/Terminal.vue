@@ -12,9 +12,9 @@
       </p>
     </div>
     <div class="normal-padding">
-      <span>
-        C:\Users\User>
-      </span>
+      <p class="inline">
+        Dashboard:\Users\User>
+      </p>
       <input type="text" class="input" v-model="search" @keydown.enter="getResult">
     </div>
   </div>
@@ -53,6 +53,9 @@ export default {
   flex-direction: column;
 }
 
+.terminal p {
+  font-family: Arial, Helvetica, sans-serif;
+}
 
 .terminal .input {
   border: none;
@@ -60,6 +63,8 @@ export default {
   background: rgb(17, 17, 17);
   margin: 0px 20px 20px 20px;
   outline: none;
-  margin-left: -1px;
+  margin-left: 5px;
+  font-size: 1.1rem;
+  font-family: Arial, Helvetica, sans-serif;
 }
 </style>

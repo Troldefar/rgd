@@ -24,15 +24,11 @@ export default {
 .searchTerm {
   width: 50%;
   background: rgb(207, 207, 207);
-  padding: 5px;
+  padding: 10px;
   height: 40px;
   border-radius: 5px 0 0 5px;
   border: none;
   outline: none;
-}
-
-.searchTerm:focus{
-  color: #4e73df;
 }
 
 .searchButton {

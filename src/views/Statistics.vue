@@ -1,5 +1,5 @@
 <template>
-  <div class="statistics">
+  <div class="statistics normal-padding">
     <h1>
       Statistics
     </h1>

@@ -1,5 +1,5 @@
 <template>
-  <div class="home">
+  <div class="home normal-padding">
     <h2>
       Dashboard
     </h2>
