@@ -1,6 +1,7 @@
 <template>
   <div class="n normal-padding">
     <h2>
+      <i class="fas fa-laugh-wink mr-2 mb-2"></i>
       Dashboard
     </h2>
     <hr>
@@ -84,9 +85,14 @@ export default {
   color: white;
 }
 
+.n h2 {
+  text-align: center;
+}
+
 .n .menuItem {
   line-height: 3;
   position: relative;
+  cursor: pointer;
 }
 
 .n .menuItem p {

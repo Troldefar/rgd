@@ -1,6 +1,9 @@
 <template>
   <div class="m normal-padding shadow">
     <Search />
+    <div class="headerDB">
+      Dashboard
+    </div>
     <div class="user">
       <span class="notification" @click="openDropdown('notifications')">
         <i class="fas fa-bell fa-fw"></i>
@@ -31,7 +34,7 @@
       <span>
         <img 
           class="userImage" 
-          src="https://www.flaticon.com/svg/vstatic/svg/3135/3135715.svg?token=exp=1616351162~hmac=418a852f4c1bae0b301d00ab84c659f1"/>
+          src="../../assets/img/profile.png"/>
       </span>
     </div>
   </div>
@@ -75,7 +78,7 @@ export default {
 
 .user {
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
   align-items: center;
 }
 
@@ -96,6 +99,11 @@ export default {
 
 .userImage {
   max-height: 32px;
+}
+
+.headerDB {
+  text-align: center;
+  font-size: 1.5rem;
 }
 
 .m .user .notification {

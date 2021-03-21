@@ -15,36 +15,54 @@
       <p class="inline">
         Dashboard:\Users\User>
       </p>
-      <input type="text" class="input" v-model="search" @keydown.enter="getResult" @keydown.up="showPrevious">
+      <input type="text" class="input" v-model="search" @keydown.enter="checkManPage(search, getResult)" @keydown.up="showPrevious">
+    </div>
+    <div class="normal-padding">
+      {{ currentManPage.text }}
     </div>
   </div>
 </template>
 
 <script>
-import { ref, onMounted } from 'vue';
+import { ref, onMounted, onUpdated } from 'vue';
+import { man } from '../assets/js/objects/man';
+import { checkManPage } from '../assets/js/functions/checkManPage';
 export default {
   setup() {
-    const search = ref('');
+
+    let search = ref('');
     const previousCommands = ref([]);
+    const currentManPage = ref({
+      header: 'text',
+      text: '',
+    });
+
     function focus() {
       document.querySelector(".input").focus();
     }
     function showPrevious() {
-      this.search = this.previousCommands[this.previousCommands.length - 1]
+      search = this.previousCommands[this.previousCommands.length - 1]
     }
+    function getResult(msg) {
+      console.log(msg);
+    }
+    
     onMounted(() => {
-      focus() 
+      focus();
+    });
+
+    onUpdated(() => {
+      console.log(search.value);
     })
-    function getResult(search) {
-      console.log(search.target.value);
-      this.previousCommands.push(search.target.value);
-      this.search = '';
-    }
+
     return {
-      getResult,
       search,
       previousCommands,
-      showPrevious
+      showPrevious,
+      man,
+      currentManPage,
+      checkManPage,
+      getResult
     }
   }
 }
@@ -54,7 +72,7 @@ export default {
 .terminal {
   height: 100%;
   width: 100%;
-  background: rgb(17, 17, 17);
+  background: rgb(41, 41, 41);
   color: rgb(170, 170, 170);
   display: flex;
   flex-direction: column;
@@ -67,7 +85,7 @@ export default {
 .terminal .input {
   border: none;
   color: rgb(170, 170, 170);
-  background: rgb(17, 17, 17);
+  background: rgb(41, 41, 41);
   margin: 0px 20px 20px 20px;
   outline: none;
   margin-left: 5px;
