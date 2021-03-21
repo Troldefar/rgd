@@ -44,6 +44,7 @@ export default {
     }
     function getResult(msg) {
       currentManPage.value.text = msg.text;
+      search.value = '';
     }
     
     onMounted(() => {
