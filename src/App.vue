@@ -3,7 +3,7 @@
     <LeftMenu />    
     <div class="c">
       <UpperMenu />
-      <div class="c normal-padding">
+      <div class="c">
         <router-view/>
       </div>
     </div>

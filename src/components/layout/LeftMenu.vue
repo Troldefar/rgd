@@ -21,7 +21,10 @@
         <i class="fas fa-angle-right leftArrow fac"></i>
       </p>
       <div :class=" `menuComponent ${currentElement === item.title ? 'active grow' : 'notActive'}`">
-        {{ item.title }}
+        <router-link :to="item.title">
+          <i class="fab fa-adn mr-2"></i>
+          {{ item.header }}
+        </router-link>
       </div>
     </div>
     <hr>
@@ -37,7 +40,10 @@
         <i class="fas fa-angle-right leftArrow fac"></i>
       </p>
       <div :class=" `menuComponent ${currentElement === item.title ? 'active grow' : 'notActive'}`">
-        {{ item.title }}
+        <router-link :to="item.title">
+          <i class="fab fa-adn mr-2"></i>
+          {{ item.header }}
+        </router-link>
       </div>
     </div>
   </div>
@@ -98,7 +104,7 @@ export default {
 
 .menuComponent {
   position: relative;
-  background: lightgray;
+  background: rgb(55, 145, 180);
   border-radius: 2px;
   box-shadow: 2px 2px 2px black;
 }
