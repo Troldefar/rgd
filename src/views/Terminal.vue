@@ -17,7 +17,7 @@
       </p>
       <input type="text" class="input" v-model="search" @keydown.enter="checkManPage(search, getResult)" @keydown.up="showPrevious">
     </div>
-    <div class="normal-padding">
+    <div class="normal-padding arial">
       {{ currentManPage.text }}
     </div>
   </div>
