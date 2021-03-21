@@ -10,7 +10,7 @@ export function checkManPage (search, callback) {
     rules.data = [man]
     return callback(rules);
   } else if(search === 'clear') {
-    rules.text = 'clear';
+    rules.text = '';
     return callback(rules);
   } else {
     rules.text = 'Not valid';
