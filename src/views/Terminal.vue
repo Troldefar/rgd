@@ -1,16 +1,44 @@
 <template>
   <div class="terminal">
     <div class="output normal-padding">
-      Random output
+      <p>
+        Dashboard terminal [Version 1.0.0]
+      </p>
+      <p>
+        (c) 2021 Dashboard Corporation. All rights reserved.
+      </p>
+      <p>
+        System ready {{ new Date().toISOString() }}
+      </p>
     </div>
-    <input type="text" class="input">
+    <div class="normal-padding">
+      <span>
+        C:\Users\User>
+      </span>
+      <input type="text" class="input" v-model="search" @keydown.enter="getResult">
+    </div>
   </div>
 </template>
 
 <script>
+import { ref, onMounted } from 'vue';
 export default {
   setup() {
-    return {}
+    const search = ref('');
+    function focus() {
+      document.querySelector(".input").focus();
+    }
+    onMounted(() => {
+      focus() 
+    })
+    function getResult(search) {
+      console.log(search.target.value);
+      this.search = '';
+    }
+    return {
+      getResult,
+      search
+    }
   }
 }
 </script>
@@ -19,25 +47,19 @@ export default {
 .terminal {
   height: 100%;
   width: 100%;
-  background: black;
-  color: white;
+  background: rgb(17, 17, 17);
+  color: rgb(170, 170, 170);
   display: flex;
   flex-direction: column;
 }
 
-.terminal .output {
-  flex: 12;
-}
 
 .terminal .input {
-  flex: 1;
   border: none;
-  background: black;
-  border: 1px solid white;
-  color: white;
+  color: rgb(170, 170, 170);
+  background: rgb(17, 17, 17);
   margin: 0px 20px 20px 20px;
-  font-size: 1.5rem;
-  border-radius: 3px;
   outline: none;
+  margin-left: -1px;
 }
 </style>

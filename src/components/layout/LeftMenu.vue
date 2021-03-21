@@ -6,7 +6,9 @@
     <hr>
     <div class="menuItem">
       <i class="fas fa-fw fa-tachometer-alt mr-2"></i>
-      Dashboard
+      <router-link to="/">
+        Dashboard
+      </router-link>
     </div>
     <hr>
     <p>
@@ -104,7 +106,8 @@ export default {
 
 .menuComponent {
   position: relative;
-  background: rgb(55, 145, 180);
+  background: #0d1b2a;
+  color: white;
   border-radius: 2px;
   box-shadow: 2px 2px 2px black;
 }

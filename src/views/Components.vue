@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="component">
     components
   </div>
 </template>
@@ -10,6 +10,8 @@ export default {
 }
 </script>
 
-<style>
-
+<style scoped>
+.component {
+  height: 100%;
+}
 </style>
