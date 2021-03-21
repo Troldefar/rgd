@@ -40,6 +40,16 @@ const routes = [
     path: '/charts',
     name: 'Charts',
     component: () => import('../views/Charts.vue')
+  },
+  {
+    path: '/messages',
+    name: 'Messages',
+    component: () => import('../views/Messages.vue')
+  },
+  {
+    path: '/notifications',
+    name: 'Notifications',
+    component: () => import('../views/Notifications.vue')
   }
 ]
 
