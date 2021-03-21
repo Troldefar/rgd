@@ -26,7 +26,7 @@
       </span>
       <hr>
       <span>
-        User
+        Test user
       </span>
       <span>
         <img class="userImage" src="https://img.icons8.com/dusk/64/000000/user-shield.png"/>

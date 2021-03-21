@@ -32,7 +32,7 @@ export default {
   background:rgb(255, 255, 255);
   left: -1000%;
   width: 20rem;
-  border-radius: 2px;
+  border-radius: 5px;
   border: 1px solid darkgray;
 }
 

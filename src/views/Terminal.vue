@@ -15,7 +15,7 @@
       <p class="inline">
         Dashboard:\Users\User>
       </p>
-      <input type="text" class="input" v-model="search" @keydown.enter="getResult">
+      <input type="text" class="input" v-model="search" @keydown.enter="getResult" @keydown.up="showPrevious">
     </div>
   </div>
 </template>
@@ -25,19 +25,26 @@ import { ref, onMounted } from 'vue';
 export default {
   setup() {
     const search = ref('');
+    const previousCommands = ref([]);
     function focus() {
       document.querySelector(".input").focus();
+    }
+    function showPrevious() {
+      this.search = this.previousCommands[this.previousCommands.length - 1]
     }
     onMounted(() => {
       focus() 
     })
     function getResult(search) {
       console.log(search.target.value);
+      this.previousCommands.push(search.target.value);
       this.search = '';
     }
     return {
       getResult,
-      search
+      search,
+      previousCommands,
+      showPrevious
     }
   }
 }
@@ -66,5 +73,6 @@ export default {
   margin-left: 5px;
   font-size: 1.1rem;
   font-family: Arial, Helvetica, sans-serif;
+  width: 50%;
 }
 </style>
