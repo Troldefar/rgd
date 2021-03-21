@@ -33,7 +33,27 @@ hr {
   border-top: 1px solid rgba(255, 255, 255, 0.15);
 }
 
-/************************ MARGIN ************************/
+/************************ Display ************************/
+
+.active {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+  animation: grow;
+  animation-duration: 0.3s;
+  animation-fill-mode: forwards;
+}
+
+.notActive {
+  animation: shrink;
+  animation-duration: 0.3s;
+  animation-fill-mode: forwards;
+  display: none;
+}
+
+/************************ Margin ************************/
 
 .mr-2 {
   margin-right: 10px;
