@@ -5,15 +5,19 @@ export function checkManPage (search, callback) {
     text: '',
     data: []
   };
-  if(search === 'man') {
-    rules.text = 'intro';
-    rules.data = [man]
-    return callback(rules);
-  } else if(search === 'clear') {
-    rules.text = '';
-    return callback(rules);
-  } else {
-    rules.text = 'Not valid';
-    return callback(rules);
+  switch (search) {
+    case 'man':
+      rules.text = 'intro';
+      rules.data = [man]
+      return callback(rules);
+    case 'clear':
+      rules.text = '';
+      return callback(rules);
+    case 'help':
+      rules.text = 'Type man to get started';
+      return callback(rules);
+    default:
+      rules.text = 'Not valid';
+      return callback(rules);
   }
 }

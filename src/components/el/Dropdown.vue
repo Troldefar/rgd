@@ -10,7 +10,7 @@
       </div>
     </div>
     <div class="rm">
-      Read more messages
+      Read more {{ title }}
     </div>
   </div>
 </template>

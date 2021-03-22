@@ -8,7 +8,7 @@
       <span class="notification" @click="openDropdown('notifications')">
         <i class="fas fa-bell fa-fw"></i>
         <span>
-          0
+          2
         </span>
         <Dropdown 
           :class="`drop-down ${currentElement === 'notifications' ? 'show' : 'dontShow'}`" 
@@ -18,13 +18,13 @@
       </span>
       <span class="notification" @click="openDropdown('messages')">
         <i class="fas fa-envelope fa-fw"></i>
-        <span>
+        <span class="greenColor">
           0
         </span>
         <Dropdown 
           :class="`drop-down ${currentElement === 'messages' ? 'show' : 'dontShow'}`" 
           title="Notifications" 
-          :messages="[{text: '123'}, {text: '2345'}]" 
+          :messages="[]" 
         />
       </span>
       <hr>
@@ -135,5 +135,11 @@ export default {
   align-items: center;
   z-index: 0;
   color: white;
+  border: 1px solid white;
 }
+
+.greenColor {
+  background: rgb(119, 145, 119) !important;
+}
+
 </style>

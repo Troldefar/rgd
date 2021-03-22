@@ -11,7 +11,7 @@
         System ready {{ new Date().toISOString() }}
       </p>
     </div>
-    <div class="normal-padding">
+    <div class="pl-2">
       <p class="inline">
         Dashboard:\Users\User>
       </p>
