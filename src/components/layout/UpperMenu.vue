@@ -122,11 +122,11 @@ export default {
 
 .m .user .notification > span {
   position: absolute;
-  top: -4px;
-  right: -12px;
+  top: -6px;
+  right: -14px;
   border-radius: 50%;
-  width: 18px;
-  height: 18px;
+  width: 20px;
+  height: 20px;
   text-align: center;
   font-size: 0.8rem;
   background: #e74a3b;

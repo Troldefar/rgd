@@ -22,7 +22,7 @@ export default {
 }
 
 .searchTerm {
-  width: 50%;
+  width: 80%;
   background: rgb(207, 207, 207);
   padding: 10px;
   height: 40px;
