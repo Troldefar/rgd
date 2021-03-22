@@ -1,6 +1,6 @@
 <template>
   <div class="home normal-padding">
-    <h1>
+    <h1 class="mb-2">
       Dashboard
     </h1>
     <div class="upper">
@@ -11,6 +11,7 @@
         :text="item.header" 
         :data="item.data"
         :border="item.borderColor"
+        :icon="item.cardIcon"
       />
     </div>
   </div>
@@ -39,6 +40,6 @@ export default {
 }
 
 .home .upper > div {
-  margin: 0px 2px;
+  margin: 0px 10px;
 }
 </style>

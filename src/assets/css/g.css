@@ -84,3 +84,21 @@ hr {
 .pl-2 {
   padding-left: 20px;
 }
+
+/************************ BORDER LEFT FOR FANCY ¤("# ************************/
+
+.orange {
+  border-left: 5px solid orange;
+}
+
+.green {
+  border-left: 5px solid green;
+}
+
+.red {
+  border-left: 5px solid crimson;
+}
+
+.blue {
+  border-left: 5px solid blue;
+}
