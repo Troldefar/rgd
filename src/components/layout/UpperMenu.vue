@@ -4,7 +4,11 @@
     <div class="headerDB">
       Dashboard
     </div>
+    <Modal v-if="terminalModal" />
     <div class="user">
+      <span class="notification" @click="setModal">
+        <i class="fas fa-laptop-code"></i>
+      </span>
       <span class="notification" @click="openDropdown('notifications')">
         <i class="fas fa-bell fa-fw"></i>
         <span>
@@ -44,14 +48,17 @@
 import { ref } from 'vue';
 import Search from '../el/Search';
 import Dropdown from '../el/Dropdown';
+import Modal from '../el/Modal';
 export default {
   name: 'UpperMenu',
   components: {
     Search,
-    Dropdown
+    Dropdown,
+    Modal
   },
   setup() {
     const currentElement = ref('');
+    const terminalModal = ref(false);
     function openDropdown(el) {
       if(this.currentElement === el) {
         this.currentElement = '';
@@ -59,9 +66,14 @@ export default {
       }
       this.currentElement = el;
     }
+    function setModal() {
+      this.terminalModal = !this.terminalModal;
+    }
     return {
       currentElement,
-      openDropdown
+      openDropdown,
+      setModal,
+      terminalModal
     } 
   }
 }

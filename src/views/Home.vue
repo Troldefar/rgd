@@ -12,6 +12,7 @@
         :data="item.data"
         :border="item.borderColor"
         :icon="item.cardIcon"
+        :headerColor="item.headerColor"
       />
     </div>
   </div>
@@ -40,6 +41,6 @@ export default {
 }
 
 .home .upper > div {
-  margin: 0px 10px;
+  margin-right: 15px;
 }
 </style>

@@ -1,5 +1,8 @@
 <template>
-  <div class="terminal">
+  <div class="terminal" @keydown.escape="closeTerminal">
+    <div class="close">
+      <i class="far fa-times-circle"></i>
+    </div>
     <div class="output normal-padding">
       <p>
         Dashboard terminal [Version 1.0.0]
@@ -46,6 +49,9 @@ export default {
       currentManPage.value.text = msg.text;
       search.value = '';
     }
+    function closeTerminal() {
+      console.log("Close terminal");
+    }
     
     onMounted(() => {
       focus();
@@ -57,7 +63,8 @@ export default {
       showPrevious,
       currentManPage,
       checkManPage,
-      getResult
+      getResult,
+      closeTerminal
     }
   }
 }
@@ -67,10 +74,18 @@ export default {
 .terminal {
   height: 100%;
   width: 100%;
-  background: rgb(41, 41, 41);
   color: rgb(170, 170, 170);
   display: flex;
   flex-direction: column;
+  position: relative;
+}
+
+.terminal .close {
+  position: absolute;
+  top: 0px;
+  right: 10px;
+  font-size: 1.5rem;
+  cursor: pointer;
 }
 
 .terminal p {
@@ -80,7 +95,7 @@ export default {
 .terminal .input {
   border: none;
   color: rgb(170, 170, 170);
-  background: rgb(41, 41, 41);
+  background: black;
   margin: 0px 20px 20px 20px;
   outline: none;
   margin-left: 5px;

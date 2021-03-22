@@ -26,10 +26,5 @@ export const menuItemsAddons = [
     title: 'tables',
     header: 'Tables',
     icon: 'fas fa-table'
-  },
-  {
-    title: 'terminal',
-    header: 'Terminal',
-    icon: 'fas fa-terminal'
   }
 ];

@@ -15,6 +15,7 @@
 body,
 html {
   height: 100%;
+  background: rgb(243, 243, 243);
 }
 
 #app {
@@ -85,20 +86,38 @@ hr {
   padding-left: 20px;
 }
 
+/************************ color ************************/
+
+.orangeCol {
+  color: orange;
+}
+
+.greenCol {
+  color: green;
+}
+
+.redCol {
+  color: crimson;
+}
+
+.blueCol {
+  color: blue;
+}
+
 /************************ BORDER LEFT FOR FANCY ¤("# ************************/
 
 .orange {
-  border-left: 5px solid orange;
+  border-left: 2px solid orange;
 }
 
 .green {
-  border-left: 5px solid green;
+  border-left: 2px solid green;
 }
 
 .red {
-  border-left: 5px solid crimson;
+  border-left: 2px solid crimson;
 }
 
 .blue {
-  border-left: 5px solid blue;
+  border-left: 2px solid blue;
 }
