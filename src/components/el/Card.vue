@@ -1,8 +1,8 @@
 <template>
   <div v-if="type==='small'" :class="`card ${border}`">
-    <div class="content fac">
+    <div class="content">
       {{ text }}
-      <i :class="icon"></i>
+      <i :class="`${icon} card-icon`"></i>
     </div>
   </div>
 </template>
@@ -22,10 +22,5 @@ export default {
   background: rgb(214, 214, 214);
   padding: 1rem;
   flex: 1;
-}
-
-.card .content {
-  display: flex;
-  justify-content: space-evenly;
 }
 </style>
