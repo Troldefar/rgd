@@ -20,7 +20,7 @@
       </p>
       <input type="text" class="input" v-model="search" @keydown.enter="checkManPage(search, getResult)" @keydown.up="showPrevious">
     </div>
-    <div class="normal-padding arial">
+    <div class="arial pl-2">
       {{ currentManPage.text }}
     </div>
   </div>
@@ -29,9 +29,10 @@
 <script>
 import { ref, onMounted } from 'vue';
 import { checkManPage } from '../assets/js/functions/checkManPage';
+import { useStore } from 'vuex';
 export default {
   setup() {
-
+    const store = useStore();
     let search = ref('');
     const previousCommands = ref([]);
     const currentManPage = ref({
@@ -50,7 +51,7 @@ export default {
       search.value = '';
     }
     function closeTerminal() {
-      console.log("Close terminal");
+      store.dispatch('componentState/toggleTerminalModal');
     }
     
     onMounted(() => {

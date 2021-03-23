@@ -1,5 +1,5 @@
 <template>
-  <div class="m normal-padding shadow">
+  <div class="m normal-padding shadow" @keydown.alt="setModal">
     <Search />
     <div class="headerDB">
       Dashboard
@@ -45,10 +45,11 @@
 </template>
 
 <script>
-import { ref } from 'vue';
+import { ref, computed } from 'vue';
 import Search from '../el/Search';
 import Dropdown from '../el/Dropdown';
 import Modal from '../el/Modal';
+import { useStore } from 'vuex';
 export default {
   name: 'UpperMenu',
   components: {
@@ -57,8 +58,9 @@ export default {
     Modal
   },
   setup() {
+    const store = useStore();
+    const terminalModal = computed(() => store.state.componentState.isTerminalOpen);
     const currentElement = ref('');
-    const terminalModal = ref(false);
     function openDropdown(el) {
       if(this.currentElement === el) {
         this.currentElement = '';
@@ -67,7 +69,7 @@ export default {
       this.currentElement = el;
     }
     function setModal() {
-      this.terminalModal = !this.terminalModal;
+      store.dispatch('componentState/toggleTerminalModal');
     }
     return {
       currentElement,

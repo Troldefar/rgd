@@ -17,6 +17,7 @@ const actions = {
 const mutations = {
   setTerminalModal(state) {
     state.isTerminalOpen = !state.isTerminalOpen;
+    console.log(state);
   }
 }
 
