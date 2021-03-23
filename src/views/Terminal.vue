@@ -1,7 +1,7 @@
 <template>
   <div class="terminal" @keydown.escape="closeTerminal">
     <div class="close">
-      <i class="far fa-times-circle"></i>
+      <i class="far fa-times-circle" @click="closeTerminal"></i>
     </div>
     <div class="output normal-padding">
       <p>
