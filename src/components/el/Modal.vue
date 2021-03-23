@@ -28,5 +28,6 @@ export default {
   background: black;
   opacity: 0.9;
   z-index: 100;
+  border-radius: 5px;
 }
 </style>

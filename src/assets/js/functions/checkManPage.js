@@ -17,7 +17,7 @@ export function checkManPage (search, callback) {
       rules.text = 'Type man to get started';
       return callback(rules);
     default:
-      rules.text = 'Not valid';
+      rules.text = search + ' is not a valid command [Try help for more information]';
       return callback(rules);
   }
 }
